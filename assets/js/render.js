@@ -12,7 +12,20 @@ $(document).ready(function() {
         // Setting up dynamic nonconsecutive repeating text link colors
 
         // all color options for our text links
-        let colors = ["yellow", "red", "green", "magenta", "orange", "coral", "crimson", "fuchsia", "pink", "indigo", "lightskyblue"];
+        let colors = ["yellow",
+            "red",
+            "green",
+            "magenta",
+            "orange",
+            "coral",
+            "crimson",
+            "fuchsia",
+            "pink",
+            "lightseagreen",
+            "lightskyblue",
+            "salmon",
+            "indianred"
+        ];
         let links = document.getElementsByClassName("l"); // getting all text links
         let previousColor = null; // we haven't chosen our first color yet
         var elementColor; // declare elementColor

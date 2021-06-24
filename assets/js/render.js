@@ -6,25 +6,24 @@ $(document).ready(function() {
     $.getJSON('https://api.jsonbin.io/b/60d2807d5ed58625fd170ad9/latest', function(JSON) {
 
         // Append data
-        let hello = document.getElementById('hello');
-        hello.innerHTML += JSON.hello;
+        for (var key in JSON) // utilizing one-liners because JSON keys = target elem's ID
+            document.getElementById(key).innerHTML += JSON[key];
 
-        let projects = document.getElementById('projects');
-        projects.innerHTML += JSON.projects;
+        // Setting up dynamic nonconsecutive repeating text link colors
+        let colors = ["yellow", "red", "green", "magenta", "orange"]; // all color options for our text links
+        let links = document.getElementsByClassName("l"); // getting all text links
+        let previousColor = null; // we haven't chosen our first color yet
+        var elementColor; // declare elementColor
 
-        let tech = document.getElementById('tech');
-        tech.innerHTML += JSON.tech;
-
-        // Once information is added, loop through all URIs and generate links
-        let colors = ["yellow", "red", "green", "magenta", "orange"];
-        let links = document.getElementsByClassName("l");
-        let previousColor = "";
-        var elementColor;
+        // Looping through the text links
         for (var i = 0; i < links.length; i++) {
-            let element = links[i];
+
+            let element = links[i]; // shorthand for current text link
             while ((elementColor === previousColor)) // avoiding repeats
-                elementColor = colors[Math.floor(Math.random() * colors.length)];
-            previousColor = elementColor;
+                elementColor = colors[Math.floor(Math.random() * colors.length)]; // random color selection
+            previousColor = elementColor; // recording current selection for next loop
+
+            // setting current text link style attrs
             element.style.color = elementColor;
             element.style.textDecoration = "none";
             element.style.fontWeight = "500";

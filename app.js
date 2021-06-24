@@ -3,7 +3,7 @@ var express = require('express');
 
 // Creating server and setting port, resource path
 var app = express();
-var port = process.env.port || 8080;
+var port = process.env.PORT || 8080;
 app.use(express.static(__dirname));
 
 // Defining routes

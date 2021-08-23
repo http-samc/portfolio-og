@@ -46,5 +46,21 @@ $(document).ready(function() {
 
         // Show body on finish
         $('body').show();
+
+        //addProjects(); (coming soon after styling . . .)
     })
 })
+
+function addProjects() {
+
+    $.getJSON('http://localhost:8080/projects/projects.json', function(JSON) {
+        console.log(JSON)
+        var html = "";
+        JSON["projects"].forEach(project => {
+            html += `
+            <a href="https://www.smrth.dev/${project}" class="project">${project}</a>
+            `;
+        })
+        document.getElementById("projects").innerHTML += html;
+    })
+}

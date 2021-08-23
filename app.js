@@ -15,6 +15,11 @@ app.get('/contact', function (req, res) {
     res.sendFile('contact.html', {root: __dirname});
 })
 
+// Google Domains verification
+app.get('/google67d1935fa6a914cd.html', function (req, res) {
+    res.sendFile('google67d1935fa6a914cd.html', {root: __dirname});
+})
+
 // Starting server
 app.listen(port, function() {
     console.log(`running server on port ${port}`)

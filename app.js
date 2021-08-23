@@ -16,8 +16,8 @@ app.get('/contact', function (req, res) {
 })
 
 // Google Domains verification
-app.get('/google67d1935fa6a914cd.html', function (req, res) {
-    res.sendFile('google67d1935fa6a914cd.html', {root: __dirname});
+app.get('/google8eaa6c0f88ac5211.html', function (req, res) {
+    res.sendFile('google8eaa6c0f88ac5211.html', {root: __dirname});
 })
 
 // Starting server
